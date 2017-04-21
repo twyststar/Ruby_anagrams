@@ -1,8 +1,8 @@
 class String
   define_method(:anagram?) do |word|
     word1 = self
-    word1 = word1.downcase().split("").reject{ |e| e == /[^a-z ]/ || e == " " }
-    word2 = word.downcase().split("").reject{ |e| e == /[^a-z ]/ || e == " " }
+    word1 = word1.downcase().gsub(/[\W\d]/, '').split("").reject{ |e|  e == " " }
+    word2 = word.downcase().gsub(/[\W\d]/, '').split("").reject{ |e|  e == " " }
     vowels = ['a', 'e', 'i', 'o', 'u']
     both = word1 & word2
     if (word1 & vowels).empty?() || (word2 & vowels).empty?()
