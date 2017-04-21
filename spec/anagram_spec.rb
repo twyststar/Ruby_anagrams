@@ -20,4 +20,7 @@ describe('String#anagram') do
   it('will ask for correct input if either input contains vowels') do
     expect('Cat is crazy'.anagram?('ct rcy sz')).to eq("Please enter a valid word.")
   end
+  it('will identify antigram when no letters are in both inputs') do
+    expect('Cat is crazy'.anagram?('hod mu ellwb')).to eq("Antigram! No letter is present in both words.")
+  end
 end
