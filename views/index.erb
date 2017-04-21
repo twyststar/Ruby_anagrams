@@ -1,4 +1,5 @@
-<h1>Welcome to Anagram!?</h1>
+
+<p>Enter words or phrases in the fields below, and we'll let you know if it's an anagram (all the letters in one exactly match all the letters in the other), or if it's an antigram (none of the letters in either match). Punctuation and spacing don't effect the answer, and special characters and numbers will just be ignored...so type them all you like, but the match is on words only!</p>
 <form action="/form" method="post">
   <div class="form-group">
     <label for="word1">Enter a word or phrase:</label>
@@ -10,3 +11,6 @@
 </form>
 <h2>Is it an anagram?</h2>
 <h2> <%= @answer %></h2>
+<h3>Any palindromes in there?</h3>
+<h4>The first field <%= @word1_palindrome %></h4>
+<h4>The second field <%= @word2_palindrome %></h4>
