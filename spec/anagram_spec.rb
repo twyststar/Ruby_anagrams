@@ -12,9 +12,12 @@ describe('String#anagram') do
     expect('Cat'.anagram?('acT')).to eq("That's an anagram.")
   end
   it('will compare two inputs longer than one word and return if they are anagrams') do
-    expect('Cat is crazy'.anagram?('act racy siz')).to eq("That's an anagram.")
+    expect('Cat is cra zy'.anagram?('act racy siz')).to eq("That's an anagram.")
   end
   it('will ask for correct input if either input does not contain vowels') do
-    expect('Ct s crzy'.anagram?('act racy siz')).to eq("Please enter a valid word.")
+    expect('Cat is crazy'.anagram?('ct rcy sz')).to eq("Please enter a valid word.")
+  end
+  it('will ask for correct input if either input contains vowels') do
+    expect('Cat is crazy'.anagram?('ct rcy sz')).to eq("Please enter a valid word.")
   end
 end
